@@ -10,36 +10,250 @@
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+    :root
+    {
+      --Red: hsl(0, 78%, 62%);
+      --Cyan: hsl(180, 62%, 55%);
+      --Orange: hsl(34, 97%, 64%);
+      --Blue: hsl(212, 86%, 64%);
+      --Very-Dark-Blue: hsl(234, 12%, 34%);
+      --Grayish-Blue: hsl(229, 6%, 66%);
+      --Very-Light-Gray: hsl(0, 0%, 98%);
+      --White: #fff;
+      --shadow: hsl(229deg 6% 66% / 44%);
+      --font-family:'Poppins', sans-serif;;
+    }
+    *{
+      margin: 0px;
+      padding: 0px;
+    }
+
+    body
+    {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      min-height: 100vh;
+      font-family: var(--font-family);
+      background: var(--Very-Light-Gray);
+      padding-top: 40px;
+
+    }
+
+    main
+    {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    h1 
+    {
+      color: var(--Very-Dark-Blue);
+      text-align: center;
+      font-weight: 200;
+    }
+
+    h1 span
+    {
+      font-weight: 600;
+      display: block;
+    }
+
+    header p 
+    {
+      color: var(--Grayish-Blue);
+      font-size: 15px;
+      text-align: center;
+      max-width: 600px;
+      margin-top: 20px;
+    }
+
+
+  section.cards
+  {
+    margin:30px 5px ;
+    display: grid;
+    grid-auto-rows: minmax(200px,auto);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 'Supervisor Team-Builder Calculator '
+                         'Supervisor Karma Calculator';
+    gap: 30px 30px;
+  }
+
+  .cards .card
+  {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: column;
+    background:var(--White);
+    border-radius: 10px;
+    padding: 30px;
+    width: 300px;
+    padding-bottom: 20px;
+    box-shadow: -1px 20px 36px var(--shadow);
+
+  }
+
+      .cards .card h2 
+    {
+
+     color: var(--Very-Dark-Blue);
+     margin: 10px 0px;
+    }
+
+    .cards .card p
+    {
+      color: var(--Grayish-Blue);
+      font-size: 15px;
+      margin-top: 10px;
+    }
+
+    .cards .card img 
+    {
+      align-self: flex-end;
+    }
+
+     .cards .card.Supervisor
+    {
+
+      grid-area: Supervisor;
+      align-self: center;
+      border-top: 5px solid var(--Cyan);
+    }
+
+    .cards .card.Team-Builder
+    {
+
+      grid-area: Team-Builder;
+      border-top: 5px solid var(--Red);
+
+
+    }
+
+
+  .cards .card.Karma
+      {
+
+        grid-area: Karma;
+        border-top: 5px solid var(--Orange);
+
+
+      }
+
+    .cards .card.Calculator
+    {
+
+      grid-area: Calculator;
+      align-self: center;
+      border-top: 5px solid var(--Blue);
+
+
+    }
+
+
+
+  @media(max-width: 775px)
+  {
+
+    header
+    {
+      padding: 20px;
+    }
+    h1
+    {
+
+    font-size: 27px;
+    }
+
+   header  p
+    {
+      font-size: 15px;
+    }
+
+    section.cards
+    {
+      display: grid;
+      grid-auto-rows: minmax(200px,auto);
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-areas: 'Supervisor Supervisor Supervisor' 
+                           'Team-Builder Team-Builder Team-Builder '
+                           'Karma  Karma Karma' 
+                           'Calculator Calculator Calculator';
+      gap: 30px 30px;
+    }
+
+
+   .cards .card
+  {
+    
+    width: 270px;
+
+
+  }
+
+  }
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
 </head>
 <body>
   
-  Reliable, efficient delivery
-  Powered by Technology
+  <main>
 
+<header>
+    <h1>  Reliable, efficient delivery
+   <span>Powered by Technology</span></h1>
+
+<p>
   Our Artificial Intelligence powered tools use millions of project data points 
   to ensure that your project is successful
+ </p>
+</header>
 
-  Supervisor
-  Monitors activity to identify project roadblocks
+<section class="cards">
+       
+       <div class="Supervisor card">
+         <h2>  Supervisor </h2>
+         <p> Monitors activity to identify project roadblocks </p>
+         <img src="images/icon-supervisor.svg" alt="Supervisor">
+       </div>
 
-  Team Builder
-  Scans our talent network to create the optimal team for your project
+         <div class="Team-Builder card">
+         <h2> Team Builder </h2>
+         <p>Scans our talent network to create the optimal team for your project </p>
+        <img src="images/icon-team-builder.svg" alt="Team-Builder">
 
-  Karma
-  Regularly evaluates our talent to ensure quality
+       </div>
 
-  Calculator
-  Uses data from past projects to provide better delivery estimates
+         <div class="Karma card">
+         <h2>  Karma </h2>
+         <p> Regularly evaluates our talent to ensure quality </p>
+         <img src="images/icon-karma.svg" alt="Karma">
 
-  
+       </div>
+
+         <div class="Calculator card">
+         <h2>  Calculator </h2>
+         <p>Uses data from past projects to provide better delivery estimates </p>
+         <img src="images/icon-calculator.svg" alt="Calculator">
+      
+       </div>
+
+
+</section>
+
+  </main>
+  <!--
   <footer>
     <p class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
       Coded by <a href="#">Your Name Here</a>.
     </p>
   </footer>
+-->
 </body>
 </html>
